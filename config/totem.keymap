@@ -11,7 +11,6 @@
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
@@ -88,8 +87,8 @@
             bindings = <
            &kp Q        &kp W        &kp E           &kp R           &kp T        &kp Y      &kp U            &kp I            &kp O        &kp P
            &mt LSHFT A  &mt LCTRL S  &mt LEFT_ALT D  &mt LEFT_GUI F  &kp G        &kp H      &mt RIGHT_GUI J  &mt RIGHT_ALT K  &mt RCTRL L  &mt RSHIFT SEMICOLON
-&lt 1 TAB  &kp Z        &kp X        &kp C           &kp V           &kp B        &kp N      &kp M            &kp COMMA        &kp DOT      &kp FSLH              &kp SQT
-                                     &kp DEL         &kp ENTER       &kp SPACE    &kp SPACE  &lt SYM ESC      &kp BSPC
+&kp LSHFT  &kp Z        &kp X        &kp C           &kp V           &kp B        &kp N      &kp M            &kp COMMA        &kp DOT      &kp FSLH              &kp SQT
+                                     &kp DEL         &kp ENTER       &lt 1 TAB    &kp SPACE  &lt SYM ESC      &kp BSPC
             >;
         };
 
@@ -138,10 +137,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &kp EXCL      &kp AT        &kp HASH      &kp DLLR        &kp PRCNT       &kp CARET     &kp AMPS      &kp ASTERISK      &kp SQT     &kp DQT
-        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4    &kp K_MUTE    &kp K_PREV    &kp K_PLAY_PAUSE  &kp K_NEXT  &kp NON_US_BACKSLASH
-&trans  &bt BT_PRV    &bt BT_NXT    &bt BT_CLR    &bt BT_CLR_ALL  &bl BL_TOG      &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PREV        &kp C_NEXT  &kp BSLH              &trans
-                                    &gif          &trans          &mo ADJ         &trans        &trans        &trans
+        &kp EXCL  &kp AT  &kp HASH  &kp DLLR      &kp PRCNT          &kp CARET  &kp AMPS    &kp ASTERISK  &kp SQT     &kp DQT
+        &trans    &trans  &trans    &trans        &trans             &trans     &trans      &trans        &trans      &kp NON_US_BACKSLASH
+&trans  &trans    &trans  &trans    &kp C_VOL_DN  &kp C_VOLUME_UP    &trans     &kp K_MUTE  &kp K_PREV    &kp K_NEXT  &kp BSLH              &trans
+                          &gif      &trans        &mo ADJ            &trans     &trans      &trans
             >;
         };
 
@@ -164,10 +163,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &sys_reset   &bt BT_CLR  &out OUT_TOG  &trans        &trans          &trans  &kp F7  &kp F8  &kp F9  &kp F12
-        &bootloader  &bt BT_PRV  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &trans  &kp F4  &kp F5  &kp F6  &kp F11
-&trans  &trans       &bt BT_NXT  &bt BT_SEL 3  &bt BT_SEL 4  &trans          &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans
-                                 &trans        &trans        &trans          &trans  &trans  &trans
+        &sys_reset   &bt BT_CLR_ALL  &out OUT_TOG  &trans        &trans          &trans  &kp F7  &kp F8  &kp F9  &kp F12
+        &bootloader  &bt BT_PRV      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &trans  &kp F4  &kp F5  &kp F6  &kp F11
+&trans  &trans       &bt BT_NXT      &bt BT_CLR    &bt BT_SEL 3  &bt BT_SEL 4    &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans
+                                     &trans        &trans        &trans          &trans  &trans  &trans
             >;
         };
 
